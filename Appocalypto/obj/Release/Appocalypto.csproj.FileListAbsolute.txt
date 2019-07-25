@@ -1,0 +1,5 @@
+c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\bin\Release\Appocalypto.dll
+c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\bin\Release\Appocalypto.pdb
+c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\bin\Release\SAPBusinessOneSDK.dll
+c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\obj\Release\Appocalypto.dll
+c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\obj\Release\Appocalypto.pdb

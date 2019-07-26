@@ -6,28 +6,34 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Appocalypto
 {
     public class Mob
     {
+        public int orgPID { get; set; }
         public void Run(int Minutes = 1)
         {
-            var orgPID = getProcessID();
+            orgPID = getProcessID();
 
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromMinutes(Minutes);
+            System.Timers.Timer t = new System.Timers.Timer(60000 * Minutes); // 1 sec = 1000, 60 sec = 60000
+            t.AutoReset = true;
+            t.Elapsed += new System.Timers.ElapsedEventHandler(t_Elapsed);
+            t.Start();
 
-            var timer = new System.Threading.Timer((e) =>
+
+        }
+
+        private void t_Elapsed(object sender, ElapsedEventArgs e)
+        {
+
+            var res = getProcessID();
+
+            if (res != orgPID)
             {
-                var res = getProcessID();
-
-                if (res != orgPID)
-                {
-                    System.Windows.Forms.Application.Exit();
-                }
-
-            }, null, startTimeSpan, periodTimeSpan);
+                System.Windows.Forms.Application.Exit();
+            }
         }
 
         private int getProcessID()
@@ -42,14 +48,13 @@ namespace Appocalypto
                 return -1;
             }
 
-            int sessionID = Process.GetCurrentProcess().SessionId;
 
-            var application = gui.GetApplication();
+            var appId = gui.GetApplication().AppId;
 
-            var appId = application.AppId;
-            var processes = Process.GetProcessesByName(@"SAP Business One");
+            var processes = Process.GetProcessesByName(@"SAP Business One").Where(x => x.SessionId == Process.GetCurrentProcess().SessionId);
 
-            foreach (var process in processes.Where(x => x.SessionId == sessionID))
+
+            foreach (var process in processes)
             {
                 try
                 {

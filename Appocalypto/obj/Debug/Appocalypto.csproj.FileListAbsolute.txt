@@ -1,6 +1,5 @@
 c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\bin\Debug\Appocalypto.dll
 c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\bin\Debug\Appocalypto.pdb
 c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\bin\Debug\SAPBusinessOneSDK.dll
-c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\obj\Debug\Appocalypto.csprojResolveAssemblyReference.cache
 c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\obj\Debug\Appocalypto.dll
 c:\users\blatsabidze\documents\visual studio 2015\Projects\Appocalypto\Appocalypto\obj\Debug\Appocalypto.pdb

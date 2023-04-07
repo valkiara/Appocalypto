@@ -12,10 +12,10 @@ namespace Appocalypto
 {
     public class Mob
     {
-        public int orgPID { get; set; }
+        public int OriginalPID { get; set; }
         public void Run(int Minutes = 1)
         {
-            orgPID = getProcessID();
+            OriginalPID = getProcessID();
 
             System.Timers.Timer t = new System.Timers.Timer(60000 * Minutes); // 1 sec = 1000, 60 sec = 60000
             t.AutoReset = true;
@@ -30,7 +30,7 @@ namespace Appocalypto
 
             var res = getProcessID();
 
-            if (res != orgPID)
+            if (res != OriginalPID)
             {
                 System.Windows.Forms.Application.Exit();
             }

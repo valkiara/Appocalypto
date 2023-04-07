@@ -14,23 +14,18 @@ namespace Appocalypto
         {
             OriginalPID = getProcessID();
 
-            System.Timers.Timer t = new System.Timers.Timer(60000 * Minutes); // 1 sec = 1000, 60 sec = 60000
+            Timer t = new Timer(60000 * Minutes); // 1 sec = 1000, 60 sec = 60000
             t.AutoReset = true;
             t.Elapsed += new System.Timers.ElapsedEventHandler(t_Elapsed);
             t.Start();
-
-
         }
 
         private void t_Elapsed(object sender, ElapsedEventArgs e)
         {
-
             var res = getProcessID();
 
             if (res != OriginalPID)
-            {
                 System.Windows.Forms.Application.Exit();
-            }
         }
 
         private int getProcessID()

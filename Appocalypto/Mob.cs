@@ -16,7 +16,7 @@ namespace Appocalypto
 
             Timer t = new Timer(60000 * Minutes); // 1 sec = 1000, 60 sec = 60000
             t.AutoReset = true;
-            t.Elapsed += new System.Timers.ElapsedEventHandler(t_Elapsed);
+            t.Elapsed += new ElapsedEventHandler(t_Elapsed);
             t.Start();
         }
 
